@@ -14,5 +14,7 @@
 .cxx
 local.properties
 /.idea/kotlinc.xml
+/.idea/
+/core/base/build/
 /.kotlin/errors/errors-1741292951098.log
 /.kotlin/errors/
