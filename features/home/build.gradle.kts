@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.youssef.network"
+    namespace = "com.youssef.home"
     compileSdk = 35
 
     defaultConfig {
@@ -41,17 +40,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // retrofit
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.converter.scalars)
-    implementation(libs.logging.interceptor)
-    //gson
-    implementation(libs.gson)
-
-    //dagger hilt
-    implementation(libs.hilt.android.v2511)
-    kapt(libs.hilt.android.compiler.v2511)
-
 }

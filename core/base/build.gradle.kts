@@ -48,10 +48,9 @@ dependencies {
 
     implementation(libs.compose.ui)
 
-    //dagger
-    kapt(libs.dagger.compiler)
-    kapt(libs.dagger.android.processor)
-    implementation(libs.dagger)
+    //dagger hilt
+    implementation(libs.hilt.android.v2511)
+    kapt(libs.hilt.android.compiler.v2511)
 
     //modules
     implementation(project(":core:network"))
