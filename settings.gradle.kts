@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "ThmanyahAssessment"
 include(":app")
- 
+include(":core:network")
+include(":core:base")
+include(":ui-components")
