@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.statusBars
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -24,8 +22,7 @@ import com.youssef.ui_core.core.loading.LoadingDialog
 fun MainContent(
     modifier: Modifier,
     modifierContent: Modifier = Modifier
-        .fillMaxSize()
-        .verticalScroll(rememberScrollState()),
+        .fillMaxSize(),
     uiState: UiState,
     toolbar: @Composable () -> Unit = {},
     content: @Composable ColumnScope.(error: ErrorState.InputsErrors?) -> Unit,

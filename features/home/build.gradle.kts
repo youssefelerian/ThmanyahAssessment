@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:base"))
     implementation(project(":ui_component:ui_core"))
+    implementation(project(":ui_component:uikit"))
 
     //dagger hilt
     implementation(libs.hilt.android.v2511)

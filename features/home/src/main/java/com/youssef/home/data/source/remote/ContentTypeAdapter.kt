@@ -18,14 +18,18 @@ class ContentTypeAdapter : JsonDeserializer<ContentResponse> {
         context: JsonDeserializationContext
     ): ContentResponse {
         val jsonObject = json.asJsonObject
-        val contentType = jsonObject.get("content_type").asString
+        val podcastId = jsonObject.has("podcast_id")
+        val episodeId = jsonObject.has("episode_id")
+        val audiobookId = jsonObject.has("audiobook_id")
+        val articleId = jsonObject.has("article_id")
 
-        return when (contentType) {
-            "podcast" -> context.deserialize(json, PodcastResponse::class.java)
-            "episode" -> context.deserialize(json, EpisodeResponse::class.java)
-            "audio_book" -> context.deserialize(json, AudioBookResponse::class.java)
-            "audio_article" -> context.deserialize(json, AudioArticleResponse::class.java)
-            else -> throw JsonParseException("Unknown content type: $contentType")
+
+        return when {
+            podcastId -> context.deserialize(json, PodcastResponse::class.java)
+            episodeId -> context.deserialize(json, EpisodeResponse::class.java)
+            audiobookId -> context.deserialize(json, AudioBookResponse::class.java)
+            articleId -> context.deserialize(json, AudioArticleResponse::class.java)
+            else -> throw JsonParseException("Unknown content type: podcastId= $podcastId  | episodeId=$episodeId |audiobookId= $audiobookId | articleId=$articleId")
         }
     }
 }

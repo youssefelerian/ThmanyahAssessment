@@ -70,14 +70,16 @@ fun BodyMText(
     text: String,
     modifier: Modifier = Modifier.fillMaxWidth(),
     isCenter: Boolean = true,
-    color: Color = AppTheme.colors.textPrimary
+    color: Color = AppTheme.colors.textPrimary,
+    maxLines: Int = Int.MAX_VALUE
 ) {
     Text(
         modifier = Modifier.then(modifier),
         text = text,
         style = AppTheme.typography.bodyMedium.copy(textDirection = TextDirection.Content),
         textAlign = if (isCenter) TextAlign.Center else null,
-        color = color
+        color = color,
+        maxLines =maxLines
     )
 }
 
@@ -86,14 +88,16 @@ fun BodySText(
     text: String,
     modifier: Modifier = Modifier.fillMaxWidth(),
     isCenter: Boolean = true,
-    color: Color = AppTheme.colors.textSecondary
+    color: Color = AppTheme.colors.textSecondary,
+    maxLines: Int = Int.MAX_VALUE
 ) {
     Text(
         modifier = Modifier.then(modifier),
         text = text,
         style = AppTheme.typography.bodySmall.copy(textDirection = TextDirection.Content),
         textAlign = if (isCenter) TextAlign.Center else null,
-        color = color
+        color = color,
+        maxLines =maxLines
     )
 }
 

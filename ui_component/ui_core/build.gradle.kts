@@ -55,4 +55,8 @@ dependencies {
     //modules
     implementation(project(":core:base"))
     implementation(project(":core:network"))
+
+    //load image
+    implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 }

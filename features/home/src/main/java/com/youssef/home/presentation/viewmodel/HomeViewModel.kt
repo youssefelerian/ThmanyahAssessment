@@ -25,7 +25,7 @@ class HomeViewModel @Inject constructor(
     override fun onAction(uiAction: HomeUiAction) {
     }
 
-    fun loadHome() {
+    private fun loadHome() {
         execute {
             getHomeUseCase.collectToMutableState(
                 1,
@@ -35,7 +35,7 @@ class HomeViewModel @Inject constructor(
                     updateUiState { copy(loadingState = loading, errorState = error) }
                 },
                 success = {
-                    updateUiState { copy(loadingState = null, errorState = null) }
+                    updateUiState { copy(loadingState = null, errorState = null, home = it) }
                 })
         }
     }

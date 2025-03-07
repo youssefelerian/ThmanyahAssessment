@@ -29,6 +29,7 @@ data class Spaces(
     val space8Xl: Dp = 100.dp,
     val space9Xl: Dp = 120.dp,
     val space150: Dp = 150.dp,
+    val space200: Dp = 200.dp,
     val border: Dp = 1.5.dp,
     val defaultElevation: Dp = 6.dp,
 )

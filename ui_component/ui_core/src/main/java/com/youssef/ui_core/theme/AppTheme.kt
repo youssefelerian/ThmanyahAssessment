@@ -48,7 +48,7 @@ object AppTheme {
 
 @Composable
 fun AppTheme(
-    isEnglish: Boolean = false,
+    isEnglish: Boolean = true,
     forceDarkTheme: Boolean? = null,
     content: @Composable () -> Unit
 ) {
