@@ -43,15 +43,15 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // retrofit
-    implementation(libs.retrofit)
+    api(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.converter.scalars)
     implementation(libs.logging.interceptor)
     //gson
-    implementation(libs.gson)
+    api(libs.gson)
 
     //dagger hilt
-    implementation(libs.hilt.android.v2511)
+    api(libs.hilt.android.v2511)
     kapt(libs.hilt.android.compiler.v2511)
 
 }

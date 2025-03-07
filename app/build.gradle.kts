@@ -83,6 +83,8 @@ dependencies {
     //modules
     implementation(project(":core:network"))
     implementation(project(":core:base"))
-    implementation(project(":ui-components"))
+    implementation(project(":ui_component:ui_core"))
+    //features
+    implementation(project(":features:home"))
 
 }

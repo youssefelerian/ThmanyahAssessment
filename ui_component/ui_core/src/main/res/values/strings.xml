@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="ok">نعم</string>
+    <string name="cancel">إلغاء</string>
+    <string name="loading">جاري التحميل</string>
+    <string name="id_retry">حاول مره اخري</string>
+</resources>

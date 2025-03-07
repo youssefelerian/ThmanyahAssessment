@@ -8,7 +8,7 @@ import kotlin.coroutines.coroutineContext
 sealed class Outcome<T> {
     abstract fun isSuccess(): Boolean
     open fun errorMessage(): ErrorEntity? = null
-    abstract suspend fun accept(useCase:UseCase<T>)
+    abstract suspend fun accept(useCase: UseCase<T>)
 
 
     class Success<T>(val data: T) : Outcome<T>() {
@@ -18,7 +18,7 @@ sealed class Outcome<T> {
         }
     }
 
-    class Error<T>(private val error: ErrorEntity) : Outcome<T>() {
+    class Error<T>(val error: ErrorEntity) : Outcome<T>() {
         override fun isSuccess() = false
         override suspend fun accept(useCase: UseCase<T>) {
             useCase.onError(error)
@@ -49,6 +49,23 @@ suspend fun <T> Outcome<T>.doOnSuccess(onSuccess: suspend (T) -> Unit): Outcome<
     }
 
     return this
+}
+
+suspend fun <T, R> Outcome<T>.map(map: suspend (T) -> R): Outcome<R> {
+    return when (this) {
+        is Outcome.Success<T> -> {
+            Outcome.success(map(this.data))
+        }
+
+        is Outcome.Error<T> -> {
+            Outcome.error(this.error)
+        }
+
+        else -> {
+            Outcome.empty()
+        }
+    }
+
 }
 
 suspend fun <T> Outcome<T>.doOnEmpty(onEmpty: suspend () -> Unit): Outcome<T> {
