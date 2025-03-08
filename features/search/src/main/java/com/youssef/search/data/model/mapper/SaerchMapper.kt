@@ -17,10 +17,10 @@ fun SearchResponse.toEntity() = SearchEntity(
 fun SectionResponse.toEntity(): SectionEntity {
     return SectionEntity(
         content = content?.map { it.toEntity() } ?: emptyList(),
-        contentType = ContentType.getContentType(contentType),
+        contentType = ContentType.entries.random(),
         name = name.orEmpty(),
-        order = order ?: 0,
-        type = SectionType.getSectionType(type)
+        order = order.orEmpty(),
+        type = SectionType.entries.random()
     )
 }
 
@@ -29,9 +29,9 @@ fun ContentResponse.toEntity() = ContentEntity(
     name = name.orEmpty(),
     description = description.orEmpty(),
     avatarUrl = avatar_url.orEmpty(),
-    episodeCount = episode_count ?: 0,
-    duration = duration ?: 0,
-    priority = priority ?: 0,
-    popularityScore = popularityScore ?: 0,
-    score = score ?: 0.0
+    episodeCount = episode_count.orEmpty(),
+    duration = duration.orEmpty(),
+    priority = priority.orEmpty(),
+    popularityScore = popularityScore.orEmpty(),
+    score = score.orEmpty()
 )

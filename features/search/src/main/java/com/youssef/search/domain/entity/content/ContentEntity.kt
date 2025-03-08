@@ -5,9 +5,9 @@ data class ContentEntity(
     val name: String,
     val description: String,
     val avatarUrl: String,
-    val episodeCount: Int,
-    val duration: Int,
-    val priority: Int,
-    val popularityScore: Int,
-    val score: Double
+    val episodeCount: String,
+    val duration: String,
+    val priority: String,
+    val popularityScore: String,
+    val score: String
 )

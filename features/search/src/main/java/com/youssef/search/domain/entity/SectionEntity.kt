@@ -9,6 +9,6 @@ data class SectionEntity(
     val content: List<ContentEntity>,
     val contentType: ContentType,
     val name: String,
-    val order: Int,
+    val order: String,
     val type: SectionType
 )

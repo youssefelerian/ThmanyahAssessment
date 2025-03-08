@@ -75,6 +75,7 @@ dependencies {
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     //dagger hilt
     implementation(libs.hilt.android.v2511)

@@ -11,7 +11,7 @@ data class SectionResponse(
     @SerializedName("name")
     val name: String?,
     @SerializedName("order")
-    val order: Int?,
+    val order: String?,
     @SerializedName("type")
     val type: String?
 )
