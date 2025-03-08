@@ -16,6 +16,7 @@ import com.youssef.uikit.layout.two_row_grid.model.TowRowGridUiModel
 
 @Composable
 fun TwoRowGridLayout(model: TowRowGridUiModel) {
+    SpacerVertical(AppTheme.spaces.spaceS)
     TitleLText(model.title)
     SpacerVertical(AppTheme.spaces.spaceS)
     LazyHorizontalGrid(

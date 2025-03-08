@@ -16,6 +16,7 @@ import com.youssef.uikit.layout.square.model.SquareUiModel
 
 @Composable
 fun SquareLayout(model: SquareUiModel) {
+    SpacerVertical(AppTheme.spaces.spaceS)
     TitleLText(model.title)
     SpacerVertical(AppTheme.spaces.spaceS)
     LazyHorizontalGrid(

@@ -46,6 +46,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockito.android)
+    testImplementation(libs.kotlinx.coroutines.test)
+
+
     //modules
     implementation(project(":core:network"))
     implementation(project(":core:base"))

@@ -21,8 +21,8 @@ import com.youssef.uikit.ui_model.UIPros
 
 
 fun HomeEntity.toUiModel(): List<IRenderComponent> {
-    return sections.map {
-        val listOfComponent = it.content.map { content ->
+    return sections.map { section ->
+        val listOfComponent = section.content.map { content ->
             val props: UIPros = when (content) {
                 is AudioArticleEntity -> {
                     AudioArticleUiModel(
@@ -37,7 +37,12 @@ fun HomeEntity.toUiModel(): List<IRenderComponent> {
                 }
 
                 is EpisodeEntity -> {
-                    EpisodeUiModel(content.name, content.duration.toDuration(), content.avatarUrl)
+                    EpisodeUiModel(
+                        section.type == SectionType.BIG_SQUARE_2 || section.type == SectionType.BIG_SQUARE,
+                        content.name,
+                        content.duration.toDuration(),
+                        content.avatarUrl
+                    )
                 }
 
                 is PodcastEntity -> {
@@ -46,7 +51,7 @@ fun HomeEntity.toUiModel(): List<IRenderComponent> {
             }
             RenderEngin.getComponent(props)
         }
-        it.toUiModel(listOfComponent)
+        section.toUiModel(listOfComponent)
     }
 }
 
@@ -71,7 +76,6 @@ fun SectionEntity.toUiModel(listOfComponent: List<IRenderComponent>): IRenderCom
         SectionType.BIG_SQUARE -> {
             BigSquareUiModel(
                 title = name,
-                height = 150.dp,
                 componentList = listOfComponent
             )
         }
@@ -87,7 +91,6 @@ fun SectionEntity.toUiModel(listOfComponent: List<IRenderComponent>): IRenderCom
         SectionType.BIG_SQUARE_2 -> {
             BigSquareUiModel(
                 title = name,
-                height = 150.dp,
                 componentList = listOfComponent
             )
         }

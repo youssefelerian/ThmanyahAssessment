@@ -16,13 +16,14 @@ import com.youssef.uikit.layout.big_square.model.BigSquareUiModel
 
 @Composable
 fun BigSquareLayout(model: BigSquareUiModel) {
+    SpacerVertical(AppTheme.spaces.spaceS)
     TitleLText(model.title)
     SpacerVertical(AppTheme.spaces.spaceS)
     LazyHorizontalGrid(
         rows = GridCells.Fixed(1),
         modifier = Modifier
             .fillMaxWidth()
-            .height(model.height),
+            .height(AppTheme.spaces.spaceHeightBig),
         contentPadding = PaddingValues(AppTheme.spaces.space1Xs),
         verticalArrangement = Arrangement.spacedBy(AppTheme.spaces.spaceL),
         horizontalArrangement = Arrangement.spacedBy(AppTheme.spaces.spaceL)

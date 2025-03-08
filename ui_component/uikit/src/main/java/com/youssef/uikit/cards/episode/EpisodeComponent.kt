@@ -7,6 +7,9 @@ import com.youssef.uikit.ui_model.IRenderComponent
 class EpisodeComponent(private val props: EpisodeUiModel) : IRenderComponent {
     @Composable
     override fun Render() {
-        EpisodeCard(props)
+        if (props.isBig)
+            BigEpisodeCard(props)
+        else
+            EpisodeCard(props)
     }
 }
