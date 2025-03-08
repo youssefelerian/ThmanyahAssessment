@@ -25,7 +25,7 @@ object AppModule {
 
     @Provides
     fun provideNetworkHandler(): NetworkHandler =
-        NetworkHandler.request.setup("", BuildConfig.DEBUG)
+        NetworkHandler.request.setup(BuildConfig.HOME_API, BuildConfig.DEBUG)
 
 }
 

@@ -9,7 +9,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 
 /**
- * Created by Youssef Ebrahim Elerian on 3/5/24.
+ * Created by Youssef Ebrahim Elerian.
  * youssef.elerian@gmail.com
  */
 class NetworkHandler {
