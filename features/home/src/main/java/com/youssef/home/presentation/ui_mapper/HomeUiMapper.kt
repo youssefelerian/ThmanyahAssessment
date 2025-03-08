@@ -33,7 +33,12 @@ fun HomeEntity.toUiModel(): List<IRenderComponent> {
                 }
 
                 is AudioBookEntity -> {
-                    AudioBookUiModel(content.name, content.duration.toDuration(), content.avatarUrl)
+                    AudioBookUiModel(
+                        section.type == SectionType.BIG_SQUARE_2 || section.type == SectionType.BIG_SQUARE,
+                        content.name,
+                        content.duration.toDuration(),
+                        content.avatarUrl
+                    )
                 }
 
                 is EpisodeEntity -> {

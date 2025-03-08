@@ -3,6 +3,8 @@ package com.youssef.uikit.cards.episode
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -13,32 +15,38 @@ import androidx.compose.ui.Modifier
 import com.youssef.ui_core.core.image.LoadImage
 import com.youssef.ui_core.core.text.BodySText
 import com.youssef.ui_core.core.text.LabelSBoldText
+import com.youssef.ui_core.core.views.SpacerHorizontal
 import com.youssef.ui_core.core.views.SpacerVertical
 import com.youssef.ui_core.theme.AppTheme
 import com.youssef.uikit.cards.episode.model.EpisodeUiModel
 
 @Composable
 fun EpisodeCard(model: EpisodeUiModel) {
-    Column(modifier = Modifier.size(AppTheme.spaces.space8Xl)) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+
+    ) {
         LoadImage(
             Modifier.size(AppTheme.spaces.space8Xl),
             model.imageUrl
         )
-        SpacerVertical(AppTheme.spaces.spaceS)
-        LabelSBoldText(
-            text = model.title,
-            isCenter = false,
-            color = AppTheme.colors.textPrimary,
-            maxLines = 1
-        )
-        SpacerVertical(AppTheme.spaces.space2Xs)
-        BodySText(
-            text = model.duration,
-            isCenter = false,
-            maxLines = 1
-        )
+        SpacerHorizontal(AppTheme.spaces.spaceS)
+        Column {
+            LabelSBoldText(
+                text = model.title,
+                isCenter = false,
+                color = AppTheme.colors.textPrimary,
+                maxLines = 2
+            )
+            SpacerVertical(AppTheme.spaces.space2Xs)
+            BodySText(
+                text = model.duration,
+                isCenter = false,
+                maxLines = 1
+            )
+        }
     }
-
 }
 
 @Composable

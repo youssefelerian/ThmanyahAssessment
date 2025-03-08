@@ -15,29 +15,26 @@ import com.youssef.uikit.cards.audio_article.model.AudioArticleUiModel
 
 @Composable
 fun AudioArticleCard(model: AudioArticleUiModel) {
-    Card(
-        shape = AppTheme.radius.radiusL,
+
+    Column(
         modifier = Modifier.size(AppTheme.spaces.space8Xl)
     ) {
-        Column {
-            LoadImage(
-                Modifier.size(AppTheme.spaces.space8Xl),
-                model.imageUrl
-            )
-            SpacerVertical(AppTheme.spaces.spaceS)
-            LabelSBoldText(
-                text = model.title,
-                isCenter = false,
-                color = AppTheme.colors.textPrimary,
-                maxLines = 1
-            )
-            SpacerVertical(AppTheme.spaces.space2Xs)
-            BodySText(
-                text = model.duration,
-                isCenter = false,
-                maxLines = 1
-            )
-        }
+        LoadImage(
+            Modifier.size(AppTheme.spaces.space8Xl),
+            model.imageUrl
+        )
+        SpacerVertical(AppTheme.spaces.spaceS)
+        LabelSBoldText(
+            text = model.title,
+            isCenter = false,
+            color = AppTheme.colors.textPrimary,
+            maxLines = 1
+        )
+        SpacerVertical(AppTheme.spaces.space2Xs)
+        BodySText(
+            text = model.duration,
+            isCenter = false,
+            maxLines = 1
+        )
     }
-
 }
