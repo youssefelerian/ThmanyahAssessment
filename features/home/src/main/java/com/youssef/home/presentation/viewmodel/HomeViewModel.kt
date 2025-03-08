@@ -24,19 +24,36 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onAction(uiAction: HomeUiAction) {
+        when (uiAction) {
+            is HomeUiAction.LoadHomeAction -> {
+                if (getState().currentHomePage < getState().lastHomePage)
+                    loadHome()
+            }
+        }
     }
 
     private fun loadHome() {
         execute {
             getHomeUseCase.collectToMutableState(
-                1,
+                getState().currentHomePage,
                 isFullScreen = true,
                 language = "Ar",
                 update = { loading, error ->
-                    updateUiState { copy(loadingState = loading, errorState = error) }
+                    if (getState().currentHomePage == 1)
+                        updateUiState { copy(loadingState = loading, errorState = error) }
+                    else if (loading != null)
+                        updateUiState { copy(loadingState = LoadingState.LoadMore) }
                 },
                 success = {
-                    updateUiState { copy(loadingState = null, errorState = null, it.toUiModel()) }
+                    updateUiState {
+                        copy(
+                            loadingState = null, errorState = null,
+                            homeList = if (getState().currentHomePage == 1) it.toUiModel() else
+                                homeList + it.toUiModel(),
+                            lastHomePage = it.pagination.totalPages ?: 1,
+                            currentHomePage = getState().currentHomePage + 1
+                        )
+                    }
                 })
         }
     }

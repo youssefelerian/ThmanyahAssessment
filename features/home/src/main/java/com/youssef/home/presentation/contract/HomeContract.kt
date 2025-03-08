@@ -11,7 +11,9 @@ import com.youssef.uikit.ui_model.IRenderComponent
 data class HomeUiState(
     override val loadingState: LoadingState? = null,
     override val errorState: ErrorState? = null,
-    val homeList: List<IRenderComponent> = listOf()
+    val homeList: List<IRenderComponent> = listOf(),
+    val currentHomePage: Int = 1,
+    val lastHomePage: Int = 1
 ) : UiState
 
 sealed interface HomeUiAction : UiAction {
