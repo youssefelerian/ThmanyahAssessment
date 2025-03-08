@@ -9,6 +9,8 @@ import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.thmanyahassessment.navigation.MainNavigation
@@ -42,13 +44,17 @@ fun MainScreen() {
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
+    val selectTab = remember { mutableStateOf<Screen>(Screen.Home) }
     val items = listOf(Screen.Home, Screen.Search)
     NavigationBar {
         items.forEach { screen ->
             NavigationBarItem(
                 label = { TitleLText(screen.title) },
-                selected = screen == Screen.Home,
-                onClick = { navController.navigate(screen.route) },
+                selected = screen == selectTab.value,
+                onClick = {
+                    selectTab.value = screen
+                    navController.navigate(screen.route)
+                },
                 icon = {
                     Icon(
                         screen.icon,
