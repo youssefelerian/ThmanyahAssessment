@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,7 +35,11 @@ fun SearchScreen(modifier: Modifier, viewModel: SearchViewModel = hiltViewModel(
                 onAction(SearchUiAction.SearchAction(it.text))
             },
             placeholder = { BodyMText("Search...", isCenter = false) },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            colors = TextFieldDefaults.colors(
+                focusedTextColor = AppTheme.colors.textPrimary,
+                unfocusedTextColor = AppTheme.colors.textPrimary
+            )
         )
 
         SpacerVertical(AppTheme.spaces.spaceL)
