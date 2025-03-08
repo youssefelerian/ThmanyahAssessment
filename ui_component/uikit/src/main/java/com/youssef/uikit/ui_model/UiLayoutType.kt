@@ -1,14 +1,13 @@
-package com.youssef.home.domain.entity.type
+package com.youssef.uikit.ui_model
 
-enum class HomeType(val type: String) {
+enum class UiLayoutType(val type: String) {
     SQUARE("square"),
     TWO_LINES_GRID("2_lines_grid"),
     BIG_SQUARE("big_square"),
-    QUEUE("queue"),
-    BIG_SQUARE_2("big square");
+    QUEUE("queue");
 
     companion object {
-        fun getHomeType(type: String?): HomeType {
+        fun getLayoutType(type: String?): UiLayoutType {
             return entries.find { it.type == type } ?: SQUARE
         }
     }

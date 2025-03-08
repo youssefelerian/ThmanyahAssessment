@@ -8,6 +8,7 @@ import com.youssef.home.domain.interactor.GetHomeUseCase
 import com.youssef.home.presentation.contract.HomeSideEffect
 import com.youssef.home.presentation.contract.HomeUiAction
 import com.youssef.home.presentation.contract.HomeUiState
+import com.youssef.home.presentation.ui_mapper.toUiModel
 import com.youssef.ui_core.core.collectToMutableState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -35,7 +36,7 @@ class HomeViewModel @Inject constructor(
                     updateUiState { copy(loadingState = loading, errorState = error) }
                 },
                 success = {
-                    updateUiState { copy(loadingState = null, errorState = null, home = it) }
+                    updateUiState { copy(loadingState = null, errorState = null, it.toUiModel()) }
                 })
         }
     }

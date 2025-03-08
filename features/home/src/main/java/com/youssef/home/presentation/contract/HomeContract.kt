@@ -5,13 +5,13 @@ import com.youssef.base.presntation.viewmodel.uimodel.LoadingState
 import com.youssef.base.presntation.viewmodel.uimodel.SideEffect
 import com.youssef.base.presntation.viewmodel.uimodel.UiAction
 import com.youssef.base.presntation.viewmodel.uimodel.UiState
-import com.youssef.home.domain.entity.HomeEntity
+import com.youssef.uikit.ui_model.IRenderComponent
 
 
 data class HomeUiState(
     override val loadingState: LoadingState? = null,
     override val errorState: ErrorState? = null,
-    val home: HomeEntity? = null
+    val homeList: List<IRenderComponent> = listOf()
 ) : UiState
 
 sealed interface HomeUiAction : UiAction {

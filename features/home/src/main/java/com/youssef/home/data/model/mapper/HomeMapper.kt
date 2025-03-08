@@ -15,7 +15,7 @@ import com.youssef.home.domain.entity.content.AudioBookEntity
 import com.youssef.home.domain.entity.content.EpisodeEntity
 import com.youssef.home.domain.entity.content.PodcastEntity
 import com.youssef.home.domain.entity.type.ContentType
-import com.youssef.home.domain.entity.type.HomeType
+import com.youssef.home.domain.entity.type.SectionType
 
 
 fun HomeResponse.toEntity() = HomeEntity(
@@ -41,7 +41,7 @@ fun SectionResponse.toEntity(): SectionEntity {
         contentType = ContentType.getContentType(contentType),
         name = name.orEmpty(),
         order = order ?: 0,
-        type = HomeType.getHomeType(type)
+        type = SectionType.getSectionType(type)
     )
 }
 

@@ -2,7 +2,7 @@ package com.youssef.home.domain.entity
 
 import com.youssef.home.domain.entity.content.ContentEntity
 import com.youssef.home.domain.entity.type.ContentType
-import com.youssef.home.domain.entity.type.HomeType
+import com.youssef.home.domain.entity.type.SectionType
 
 
 data class SectionEntity(
@@ -10,5 +10,5 @@ data class SectionEntity(
     val contentType: ContentType,
     val name: String,
     val order: Int,
-    val type: HomeType
+    val type: SectionType
 )

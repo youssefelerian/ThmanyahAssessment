@@ -79,7 +79,7 @@ fun BodyMText(
         style = AppTheme.typography.bodyMedium.copy(textDirection = TextDirection.Content),
         textAlign = if (isCenter) TextAlign.Center else null,
         color = color,
-        maxLines =maxLines
+        maxLines = maxLines
     )
 }
 
@@ -97,7 +97,7 @@ fun BodySText(
         style = AppTheme.typography.bodySmall.copy(textDirection = TextDirection.Content),
         textAlign = if (isCenter) TextAlign.Center else null,
         color = color,
-        maxLines =maxLines
+        maxLines = maxLines
     )
 }
 
@@ -123,14 +123,16 @@ fun LabelSBoldText(
     text: String,
     modifier: Modifier = Modifier.fillMaxWidth(),
     isCenter: Boolean = true,
-    color: Color = AppTheme.colors.textSecondary
+    color: Color = AppTheme.colors.textSecondary,
+    maxLines: Int = Int.MAX_VALUE
 ) {
     Text(
         modifier = modifier,
         text = text,
         style = AppTheme.typography.labelMedium.copy(textDirection = TextDirection.Content),
         textAlign = if (isCenter) TextAlign.Center else null,
-        color = color
+        color = color,
+        maxLines = maxLines
     )
 }
 
