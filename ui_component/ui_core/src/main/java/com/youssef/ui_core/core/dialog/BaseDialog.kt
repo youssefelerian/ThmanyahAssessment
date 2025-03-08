@@ -46,12 +46,13 @@ fun BaseDialogFull(
                     .background(color = AppTheme.colors.backgroundOverlay)
             ) {
                 if (isDismiss) {
-                    Box(modifier = Modifier
-                        .fillMaxSize()
-                        .clickable {
-                            openAlertDialog.value = false
-                            onDismiss()
-                        })
+                    Box(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .clickable {
+                                openAlertDialog.value = false
+                                onDismiss()
+                            })
                 }
                 Card(
                     modifier = Modifier

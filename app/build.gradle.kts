@@ -75,6 +75,7 @@ dependencies {
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     //dagger hilt
     implementation(libs.hilt.android.v2511)
@@ -86,5 +87,6 @@ dependencies {
     implementation(project(":ui_component:ui_core"))
     //features
     implementation(project(":features:home"))
+    implementation(project(":features:search"))
 
 }

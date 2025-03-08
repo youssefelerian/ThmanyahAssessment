@@ -22,6 +22,7 @@ abstract class AsyncUseCase<I, R> : UseCase<R> {
         this.error = error
         run(input).accept(this)
     }
+
     protected abstract suspend fun run(input: I): Outcome<R>
 
     override suspend fun onSuccess(success: Outcome.Success<R>) {

@@ -34,9 +34,11 @@ fun MainContent(
         val errorState = uiState.errorState
         if (loading is LoadingState.FullScreen || errorState is ErrorState.FullScreen) {
             if (loading == LoadingState.FullScreen) {
-                FullLoading(Modifier
-                    .fillMaxSize()
-                    .weight(1f))
+                FullLoading(
+                    Modifier
+                        .fillMaxSize()
+                        .weight(1f)
+                )
             } else if (errorState is ErrorState.FullScreen) {
                 toolbar()
                 ErrorFullScreen(
