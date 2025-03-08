@@ -86,5 +86,6 @@ dependencies {
     implementation(project(":ui_component:ui_core"))
     //features
     implementation(project(":features:home"))
+    implementation(project(":features:search"))
 
 }
