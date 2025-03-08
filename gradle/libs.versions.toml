@@ -14,9 +14,9 @@ activityCompose = "1.10.1"
 composeBom = "2025.02.00"
 appcompat = "1.7.0"
 loggingInterceptor = "4.12.0"
-mockitoAndroid = "5.5.0"
-mockitoCore = "5.11.0"
-mockitoInline = "5.11.0"
+mockk = "1.13.17"
+mockkAgent = "1.13.17"
+mockkAndroid = "1.13.17"
 navigationFragmentKtx = "2.8.8"
 material = "1.12.0"
 gsonVersion = "2.10.1"
@@ -63,9 +63,9 @@ compose-material3 = { module = "androidx.compose.material3:material3", version.r
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
 
 
-mockito-android = { module = "org.mockito:mockito-android", version.ref = "mockitoAndroid" }
-mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
-mockito-inline = { module = "org.mockito:mockito-inline", version.ref = "mockitoInline" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+mockk-agent = { module = "io.mockk:mockk-agent", version.ref = "mockkAgent" }
+mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutinesVersion" }
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
