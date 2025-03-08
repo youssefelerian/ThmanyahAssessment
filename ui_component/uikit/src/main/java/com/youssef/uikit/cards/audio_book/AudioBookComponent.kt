@@ -9,7 +9,7 @@ class AudioBookComponent(private val props: AudioBookUiModel) : IRenderComponent
     override fun Render() {
         if (props.isBig)
             BigAudioBookCard(props)
-         else
+        else
             AudioBookCard(props)
     }
 }

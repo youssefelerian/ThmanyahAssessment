@@ -6,6 +6,6 @@ import com.youssef.search.domain.entity.SearchEntity
 
 interface SearchRepository {
 
-    suspend fun getSearchList(search:String): Outcome<SearchEntity>
+    suspend fun getSearchList(search: String): Outcome<SearchEntity>
 
 }

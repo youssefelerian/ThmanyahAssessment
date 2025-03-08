@@ -1,6 +1,6 @@
 package com.youssef.search.domain.entity.type
 
-enum class SectionType{
+enum class SectionType {
     SQUARE,
     TWO_LINES_GRID,
     BIG_SQUARE,

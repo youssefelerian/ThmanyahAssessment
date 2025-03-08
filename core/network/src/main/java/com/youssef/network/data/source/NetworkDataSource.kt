@@ -14,10 +14,10 @@ class NetworkDataSource<SERVICE>(
 
     suspend fun <R, T> performRequest(
         request: suspend SERVICE.() -> Response<R>,
-        onSuccess: suspend (R) ->Outcome<T>,
-        onEmpty: suspend () ->Outcome<T> = {Outcome.empty() },
-        onError: suspend (ErrorEntity) ->Outcome<T> = {Outcome.error(it) }
-    ):Outcome<T> {
+        onSuccess: suspend (R) -> Outcome<T>,
+        onEmpty: suspend () -> Outcome<T> = { Outcome.empty() },
+        onError: suspend (ErrorEntity) -> Outcome<T> = { Outcome.error(it) }
+    ): Outcome<T> {
         return if (networkMonitor.hasConnectivity()) {
             try {
                 val response = service.request()

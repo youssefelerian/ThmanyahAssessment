@@ -32,9 +32,11 @@ fun AlertDialogContent(
             BodyMText(text = it, isCenter = false)
         }
         SpacerVertical(AppTheme.spaces.space2Xl)
-        Row(modifier = Modifier
-            .wrapContentSize()
-            .align(Alignment.End)) {
+        Row(
+            modifier = Modifier
+                .wrapContentSize()
+                .align(Alignment.End)
+        ) {
             ButtonActionText(
                 negativeButtonText,
                 modifier = Modifier.wrapContentSize()

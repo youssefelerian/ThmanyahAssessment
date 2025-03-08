@@ -3,7 +3,6 @@ package com.youssef.uikit.cards.audio_article
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.youssef.ui_core.core.image.LoadImage

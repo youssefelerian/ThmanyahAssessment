@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,7 +19,6 @@ import com.youssef.ui_core.core.views.SpacerHorizontal
 import com.youssef.ui_core.core.views.SpacerVertical
 import com.youssef.ui_core.theme.AppTheme
 import com.youssef.uikit.cards.audio_book.model.AudioBookUiModel
-import com.youssef.uikit.cards.episode.model.EpisodeUiModel
 
 @Composable
 fun AudioBookCard(model: AudioBookUiModel) {
