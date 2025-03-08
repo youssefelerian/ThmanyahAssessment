@@ -1,15 +1,13 @@
-Assessment Android using a modular mobile application in Kotlin and Compose UI following the MVI clean architecture.
+Assessment Android using a modular mobile application in Kotlin and Compose UI following the MVI
+clean architecture.
 Use Dagger Hilt.
-Use kotlin DSL. 
+Use kotlin DSL.
 Use Jetpack Compose.
-Use Unit Testing.
-and Kotlin Flows. 
-
-
-
-
+UseKotlin Flows
+and Unit Testing.
 
 ## Libraries Used
+
 * App modularization
 * Android Jetpack's Navigation component
 * Coroutines Library support for Kotlin coroutines.
@@ -18,9 +16,13 @@ and Kotlin Flows.
 * Retrofit Type-safe REST client for Android to consume RESTful web services.
 * Unit Test
 
-
-## Screen Shot
+## Screen Shot For Home Screen
 
 ![Screenshot_for_list](https://github.com/youssefelerian/ThmanyahAssessment/blob/main/screenshots/Screenshot_20250309_003120.png)
+![Screenshot_details](https://github.com/youssefelerian/ThmanyahAssessment/blob/main/screenshots/Screenshot_20250309_003441.png)
+![Screenshot_details](https://github.com/youssefelerian/ThmanyahAssessment/blob/main/screenshots/Screenshot_20250309_003136.png)
 
+## Screen Shot For Search Screen
+
+![Screenshot_details](https://github.com/youssefelerian/ThmanyahAssessment/blob/main/screenshots/Screenshot_20250309_003150.png)
 ![Screenshot_details](https://github.com/youssefelerian/ThmanyahAssessment/blob/main/screenshots/Screenshot_20250309_003429.png)
