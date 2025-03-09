@@ -10,7 +10,7 @@ import javax.inject.Inject
 class SearchUseCase @Inject constructor(private val searchRepository: SearchRepository) :
     AsyncUseCase<String, SearchEntity>() {
 
-    override suspend fun run(input: String): Outcome<SearchEntity> {
+   public override suspend fun run(input: String): Outcome<SearchEntity> {
         return searchRepository.getSearchList(input)
     }
 }

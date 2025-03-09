@@ -10,7 +10,7 @@ import javax.inject.Inject
 class GetHomeUseCase @Inject constructor(private val homeRepository: HomeRepository) :
     AsyncUseCase<Int, HomeEntity>() {
 
-    override suspend fun run(input: Int): Outcome<HomeEntity> {
+    public override suspend fun run(input: Int): Outcome<HomeEntity> {
         return homeRepository.getHomeList(input)
     }
 }
